@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Digitalisasi Naskah Kuno 2025</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="./static/img/favicon.ico" rel="icon">
+  <link href="./static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="./static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="./static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="./static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- <link href="./static/vendor/datatables/datatables.css" rel="stylesheet"> -->
+  <link href="./static/vendor/datatables/datatables.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="./static/css/main.css" rel="stylesheet">
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    var totalUnggah = parseInt('{{ .TotalUnggah }}');
+    var totalPostProcessing = parseInt('{{ .TotalPostProcessing }}');
+    var totalPemotretan = parseInt('{{ .TotalPemotretan }}');
+    var totalPenelusuran = parseInt('{{ .TotalPenelusuran }}');
+
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Unggah', totalUnggah],
+          ['Post Processing', totalPostProcessing],
+          ['Pemotretan', totalPemotretan],
+          ['Penelusuran', totalPenelusuran]
+        ]);
+
+      var options = {
+        height: 400,
+        width: 800,
+        // title: 'Progress Kegiatan Digitalisasi Naskah Kuno 2025',
+        is3D: true,
+        colors: ['#3C493F', '#CD9FCC', '#0A014F', '#FAE8EB'],
+        backgroundColor: '#9F956C',
+        fontName: 'Open Sans',
+        legend: {
+          position: 'right', 
+          alignment: 'center',
+          maxLines: 2,
+        },
+        chartArea: {
+          // left: 20,
+          // top: 0,
+          // width: '50%',
+          height: '80%'
+        },
+      };
+
+      var chart = new google.visualization.PieChart(document.getElementById('progressChart'));
+      chart.draw(data, options);
+    }
+  </script>
+
+  <!-- =======================================================
+  * Template Name: Dewi
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img src="./static/img/logo.png" alt="">
+        <h1 class="sitename"></h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#manuscripts">Daftar Naskah</a></li>
+          <!-- <li><a href="#services">Services</a></li> -->
+          <li><a href="#khastara">Koleksi Lainnya</a></li>
+          <!-- <li><a href="#team">Team</a></li> -->
+          <!-- <li><a href="#contact">Contact</a></li> -->
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="cta-btn" href="#manuscripts">Jelajahi</a>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background" data-aos="fade-in">
+
+      <!-- <img src="./static/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
+
+      <div class="container d-flex flex-column align-items-center">
+        <h2 data-aos="fade-up" data-aos-delay="100">Digitalisasi Naskah Kuno 2025</h2>
+        <p class="text-center" data-aos="fade-up" data-aos-delay="200">Jelajahi naskah-naskah kuno yang sudah dialihmediakan dalam kegiatan digitalisasi naskah kuno oleh Pusat Preservasi dan Alih Media Bahan Perpustakaan di tahun 2025</p>
+        <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
+          <a href="#manuscripts" class="btn-get-started">Jelajahi</a>
+        </div>
+      </div>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="manuscripts" class="about section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Daftar Naskah</h2>
+        <p>Digitalisasi Naskah Kuno Tahun 2025<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+
+        <table id="data-naskun" class="table table-hover text-center">
+          <thead class="table-light align-middle">
+              <tr>
+                  <th>No. Panggil</th>
+                  <th>Judul</th>
+                  <th>BIB ID</th>
+                  <th>Bahasa</th>
+                  <th>Aksara</th>
+                  <th>Media</th>
+                  <th>Halaman / Lempir</th>
+                  <th>Dimensi</th>
+                  <th>Status</th>
+                  <th>File Digital</th>
+              </tr>
+          </thead>
+          <tbody class="align-middle">
+          
+          {{ range .Manuskrips }}
+              <tr>
+                  <td>{{ .NoPanggil }}</td>
+                  <td>{{ .Judul }}</td>
+                  <td>{{ .BIBID }}</td>
+                  <td>{{ .Bahasa }}</td>
+                  <td>{{ .Aksara }}</td>
+                  <td>{{ .Media }}</td>
+                  <td>{{ .Halaman }}</td>
+                  <td>{{ .Dimensi }}</td>
+                  {{ if eq .Status "unggah" }}
+                    <td><span class="badge text-bg-success">Unggah</span></td>
+                  {{ else if eq .Status "post processing" }}
+                    <td><span class="badge text-bg-warning">Post Processing</span></td>
+                  {{ else if eq .Status "pemotretan" }}
+                    <td><span class="badge text-bg-info">Pemotretan</span></td>
+                  {{ else }}
+                    <td><span class="badge text-bg-light">Penelusuran</span></td>
+                  {{ end }}
+                  <!-- <td>{{ .Status }}</td> -->
+                  {{ if eq .Status "unggah" }}
+                    <td><a href="{{ .LinkOPAC }}" class="btn btn-accent"><i class="bi bi-box-arrow-up-right"></i></a></td>
+                  {{ else }}
+                    <td><a href="#" class="btn btn-secondary disabled"><i class="bi bi-box-arrow-up-right"></i></a></td>
+                  {{ end }}
+              </tr>
+          {{ end }}
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <!-- <img src="./static/img/testimonials-bg.jpg" class="testimonials-bg" alt=""> -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div id="chartContainer">
+          <h2 id="chartTitle" class="text-center"><i>Progress</i> Kegiatan Digitalisasi Naskah Kuno 2025</h2>
+          <div id="progressChart" class="h-100 d-flex align-items-center justify-content-center"></div>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-book color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ .TotalManuskrips }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Total Naskah yang Didigitalisasi di 2025</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-link-45deg color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ .TotalUnggah }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Naskah Didigitalisasi <br>dan Diunggah</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-pc-display-horizontal color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ .TotalPostProcessing }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Naskah dalam Tahap Post Processing</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-camera color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{ .TotalPemotretan }}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Naskah dalam Tahap Pemotretan</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    <!-- Portfolio Section -->
+    <section id="khastara" class="portfolio section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Koleksi Digital Lainnya</h2>
+        <p>Khastara Perpustakaan Nasional RI</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/1-buku-langka.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>2.786 Koleksi</strong><br>4.618 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Monograf" class="btn-get-started">Buku Langka</a></p>
+                  <!-- <a href="./static/img/khastara/1-buku-langka.jpg" title="Buku Langka" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Monograf" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/2-naskah-kuno.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>11.361 Koleksi</strong><br>23.659 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Manuskrip" class="btn-get-started">Naskah Kuno</a></p>
+                  <!-- <a href="./static/img/khastara/2-naskah-kuno.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Manuskrip" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/3-majalah-surat-kabar-langka.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>752 Koleksi</strong><br>534.246 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Terbitan%20Berkala" class="btn-get-started">Majalah dan Surat Kabar Langka</a></p>
+                  <!-- <a href="./static/img/khastara/3-majalah-surat-kabar-langka.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Terbitan%20Berkala" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/4-peta.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>1.874 Koleksi</strong><br>2.226 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Bahan%20Kartografis" class="btn-get-started">Peta</a></p>
+                  <!-- <a href="./static/img/khastara/4-peta.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Bahan%20Kartografis" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/5-foto-gambar-lukisan.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>11.808 Koleksi</strong><br>11.712 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Bahan%20Campuran" class="btn-get-started">Foto, Gambar, dan Lukisan</a></p>
+                  <!-- <a href="./static/img/khastara/5-foto-gambar-lukisan.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Bahan%20Campuran" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
+              <div class="portfolio-content h-100">
+                <img src="./static/img/khastara/6-audio.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4><strong>100 Koleksi</strong><br>1.070 Eksemplar</h4>
+                  <p><a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Rekaman%20Suara" class="btn-get-started">Audio</a></p>
+                  <!-- <a href="./static/img/khastara/6-audio.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a> -->
+                  <!-- <a href="https://khastara.perpusnas.go.id/koleksi-digital/?worksheet=Rekaman%20Suara" title="Ke Khastara" class="details-link"><i class="bi bi-box-arrow-up-right"></i></a> -->
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+            
+          </div><!-- End Portfolio Container -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="./static/img/logo-slogan.png" alt="Home">
+          </a>
+          <div class="footer-contact pt-3">
+            <h5>Pusat Preservasi dan Alih Media Bahan Perpustakaan</h5>
+            <p>Jl. Salemba Raya No. 28A</p>
+            <p>Jakarta, 10430</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>085811503752</span></p>
+            <p><strong>Email:</strong> <span>info@perpusnas.go.id</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href="https://x.com/preservasi_pnri"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/preservasi.perpusnas"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/preservasi.perpusnas"><i class="bi bi-instagram"></i></a>
+            <a href="https://preservasi.perpusnas.go.id"><i class="bi bi-globe2"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-3 footer-links">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.495948432225!2d106.851836391102!3d-6.198109010398899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f53703c62309%3A0xfe47f7182100a906!2sNational%20Library%20of%20Indonesia%20Salemba!5e0!3m2!1sen!2sid!4v1764914258554!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="col-lg-4 col-md-3 footer-links">
+          <!-- <h4>Our Services</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#">Graphic Design</a></li>
+          </ul> -->
+          <h4>Tautan Lainnya</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://preservasi.perpusnas.go.id/pelestarian-daerah">Peta Pelestarian Daerah</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://preservasi.perpusnas.go.id/menu/mow">Memory of the World</a></li>
+          </ul>
+        </div>
+
+        
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p style="visibility: hidden;">© <span>Copyright</span> <strong class="px-1 sitename">Dewi</strong> <span>All Rights Reserved</span></p>
+      <p>© <strong class="px-1 sitename">Alif Hilmi Akbar</strong></p>
+      <div class="credits" style="visibility: hidden;">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href=“https://themewagon.com>ThemeWagon
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./static/vendor/php-email-form/validate.js"></script>
+  <script src="./static/vendor/aos/aos.js"></script>
+  <script src="./static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="./static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="./static/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="./static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="./static/js/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script> -->
+  <!-- <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script> -->
+  <!-- <script src="https://cdn.datatables.net/2.3.5/js/dataTables.bootstrap5.js"></script> -->
+  <script src="./static/vendor/datatables/datatables.js"></script>
+  <script src="./static/vendor/datatables/datatables.min.js"></script>
+
+  <script>
+    $('#data-naskun').DataTable({
+        language: {
+        "aria": {
+            "paginate": {
+                "first": "Pertama",
+                "last": "Terakhir",
+                "next": "Selanjutnya",
+                "previous": "Sebelumnya"
+            }
+        },
+        "autoFill": {
+            "cancel": "Batal",
+            "fill": "Isi semua sel dengan <i>%d<\/i>",
+            "fillHorizontal": "Isi sel secara horizontal",
+            "fillVertical": "Isi sel secara vertikal",
+            "info": ""
+        },
+        "buttons": {
+            "collection": "Kumpulan <span class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s'\/>",
+            "colvis": "Visibilitas Kolom",
+            "colvisRestore": "Kembalikan visibilitas",
+            "copy": "Salin",
+            "copyKeys": "Tekan ctrl atau u2318 + C untuk menyalin tabel ke papan klip.<br \/><br \/>Untuk membatalkan, klik pesan ini atau tekan esc.",
+            "copySuccess": {
+                "_": "%d baris disalin ke papan klip",
+                "1": "satu baris disalin ke papan klip"
+            },
+            "copyTitle": "Salin ke Papan klip",
+            "createState": "Tambahkan Data",
+            "csv": "CSV",
+            "excel": "Excel",
+            "pageLength": {
+                "_": "Tampilkan %d baris",
+                "-1": "Tampilkan semua baris"
+            },
+            "pdf": "PDF",
+            "print": "Cetak",
+            "removeAllStates": "Hapus Semua Data",
+            "removeState": "Hapus Data",
+            "renameState": "Rubah Nama",
+            "savedStates": "SImpan Data",
+            "stateRestore": "Publihkan Data",
+            "updateState": "Perbaharui data"
+        },
+        "datetime": {
+            "amPm": {
+                "0": "am",
+                "1": "pm"
+            },
+            "hours": "Jam",
+            "minutes": "Menit",
+            "months": {
+                "0": "Januari",
+                "1": "Februari",
+                "10": "November",
+                "11": "Desember",
+                "2": "Maret",
+                "3": "April",
+                "4": "Mei",
+                "5": "Juni",
+                "6": "Juli",
+                "7": "Agustus",
+                "8": "September",
+                "9": "Oktober"
+            },
+            "next": "Selanjutnya",
+            "previous": "Sebelumnya",
+            "seconds": "Detik",
+            "unknown": "-",
+            "weekdays": {
+                "0": "Min",
+                "1": "Sen",
+                "2": "Sel",
+                "3": "Rab",
+                "4": "Kam",
+                "5": "Jum",
+                "6": "Sab"
+            }
+        },
+        "decimal": "",
+        "editor": {
+            "close": "Tutup",
+            "create": {
+                "button": "Tambah",
+                "submit": "Tambah",
+                "title": "Tambah inputan baru"
+            },
+            "edit": {
+                "button": "Edit",
+                "submit": "Edit",
+                "title": "Edit inputan"
+            },
+            "error": {
+                "system": "Terjadi kesalahan pada system. (<a target=\"\\\" rel=\"\\ nofollow\" href=\"\\\">Informasi Selebihnya<\/a>)."
+            },
+            "multi": {
+                "info": "Item yang dipilih berisi nilai yang berbeda untuk input ini. Untuk mengedit dan mengatur semua item untuk input ini ke nilai yang sama, klik atau tekan di sini, jika tidak maka akan mempertahankan nilai masing-masing.",
+                "noMulti": "Masukan ini dapat diubah satu per satu, tetapi bukan bagian dari grup.",
+                "restore": "Batalkan Perubahan",
+                "title": "Beberapa Nilai"
+            },
+            "remove": {
+                "button": "Hapus",
+                "confirm": {
+                    "_": "Apakah Anda yakin untuk menghapus %d baris?",
+                    "1": "Apakah Anda yakin untuk menghapus 1 baris?"
+                },
+                "submit": "Hapus",
+                "title": "Hapus inputan"
+            }
+        },
+        "emptyTable": "Tidak ada data yang tersedia pada tabel ini",
+        "info": "Menampilkan _START_ sampai _END_ dari _TOTAL_ entri",
+        "infoEmpty": "Menampilkan 0 sampai 0 dari 0 entri",
+        "infoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+        "infoPostFix": "",
+        "infoThousands": ",",
+        "lengthMenu": "Tampilkan _MENU_ entri",
+        "loadingRecords": "Sedang memuat...",
+        "processing": "Sedang memproses...",
+        "search": "Cari:",
+        "searchBuilder": {
+            "add": "Tambah Kondisi",
+            "button": {
+                "_": "Cari Builder (%d)",
+                "0": "Cari Builder"
+            },
+            "clearAll": "Bersihkan Semua",
+            "condition": "Kondisi",
+            "conditions": {
+                "array": {
+                    "contains": "Berisi",
+                    "empty": "Kosong",
+                    "equals": "Sama dengan",
+                    "not": "Tidak",
+                    "notEmpty": "Tidak kosong",
+                    "without": "Tanpa"
+                },
+                "date": {
+                    "after": "Setelah",
+                    "before": "Sebelum",
+                    "between": "Diantara",
+                    "empty": "Kosong",
+                    "equals": "Sama dengan",
+                    "not": "Tidak sama",
+                    "notBetween": "Tidak diantara",
+                    "notEmpty": "Tidak kosong"
+                },
+                "number": {
+                    "between": "Di antara",
+                    "empty": "Kosong",
+                    "equals": "Sama dengan",
+                    "gt": "Lebih besar dari",
+                    "gte": "Lebih besar atau sama dengan",
+                    "lt": "Lebih kecil dari",
+                    "lte": "Lebih kecil atau sama dengan",
+                    "not": "Tidak sama",
+                    "notBetween": "Tidak di antara",
+                    "notEmpty": "Tidak kosong"
+                },
+                "string": {
+                    "contains": "Berisi",
+                    "empty": "Kosong",
+                    "endsWith": "Diakhiri dengan",
+                    "equals": "Sama dengan",
+                    "not": "Tidak sama",
+                    "notContains": "Tidak Berisi",
+                    "notEmpty": "Tidak kosong",
+                    "notEndsWith": "Tidak diakhiri Dengan",
+                    "notStartsWith": "Tidak diawali Dengan",
+                    "startsWith": "Diawali dengan"
+                }
+            },
+            "data": "Data",
+            "deleteTitle": "Hapus filter",
+            "leftTitle": "Ke Kiri",
+            "logicAnd": "Dan",
+            "logicOr": "Atau",
+            "rightTitle": "Ke Kanan",
+            "title": {
+                "_": "Cari Builder (%d)",
+                "0": "Cari Builder"
+            },
+            "value": "Nilai"
+        },
+        "searchPanes": {
+            "clearMessage": "Bersihkan",
+            "collapse": {
+                "_": "Panel Pencarian (%d)",
+                "0": "Panel Pencarian"
+            },
+            "collapseMessage": "Ciutkan",
+            "count": "{total}",
+            "countFiltered": "{shown} ({total})",
+            "emptyPanes": "Tidak Ada Panel Pencarian",
+            "loadMessage": "Memuat Panel Pencarian",
+            "showMessage": "Tampilkan",
+            "title": "Saringan Aktif - %d"
+        },
+        "searchPlaceholder": "",
+        "select": {
+            "cells": {
+                "_": "%d sel dipilih",
+                "0": "",
+                "1": "1 sel dipilih"
+            },
+            "columns": {
+                "_": "%d kolom dipilih",
+                "0": "",
+                "1": "1 kolom dirpilih"
+            },
+            "rows": {
+                "_": "%d baris dipilih",
+                "0": "",
+                "1": "1 baris dipilih"
+            }
+        },
+        "stateRestore": {
+            "creationModal": {
+                "button": "Buat",
+                "columns": {
+                    "search": "Pencarian Kolom",
+                    "visible": "Visibilitas Kolom"
+                },
+                "name": "Nama:",
+                "order": "Penyortiran",
+                "paging": "Nomor Halaman",
+                "scroller": "Posisi Skrol",
+                "search": "Pencarian",
+                "searchBuilder": "Cari Builder",
+                "select": "Pemilihan",
+                "title": "Buat State Baru",
+                "toggleLabel": "Termasuk:"
+            },
+            "duplicateError": "Nama State ini sudah ada.",
+            "emptyError": "Nama tidak boleh kosong.",
+            "emptyStates": "Tidak ada State yang disimpan.",
+            "removeConfirm": "Apakah Anda yakin ingin menghapus %s?",
+            "removeError": "Gagal menghapus State.",
+            "removeJoiner": "dan",
+            "removeSubmit": "Hapus",
+            "removeTitle": "Penghapusan State",
+            "renameButton": "Ganti Nama",
+            "renameLabel": "Nama Baru untuk %s:",
+            "renameTitle": "Ganti nama State"
+        },
+        "thousands": ".",
+        "zeroRecords": "Tidak ditemukan data yang sesuai"
+    }
+    });
+  </script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js"></script> -->
+
+</body>
+
+</html>
