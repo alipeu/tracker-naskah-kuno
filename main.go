@@ -112,8 +112,6 @@ func getSheetsData() (map[string]any, error) {
 		log.Fatalf("Unable to retrieve data from sheet: %v", err)
 	}
 
-	// fmt.Println(resp)
-	// manuskrips := make(map[string][]Manuskrip)
 	pageData := make(map[string]any)
 	manuskripsCount := 0
 	unggahCount := 0
@@ -124,12 +122,8 @@ func getSheetsData() (map[string]any, error) {
 	if len(resp.Values) == 0 {
 		fmt.Println("No data found.")
 	} else {
-		// pageData["Manuskrips"] = []Manuskrip{}
 		manuskrips := []Manuskrip{}
 		for _, row := range resp.Values {
-			// Print columns A and E, which correspond to indices 0 and 4.
-			// fmt.Printf("%s\n", row)
-
 			manuskrip := new(Manuskrip)
 
 			noPanggil := row[0].(string)
@@ -179,27 +173,20 @@ func getSheetsData() (map[string]any, error) {
 			manuskrips = append(manuskrips, *manuskrip)
 			manuskripsCount += 1
 		}
-		// for i := 0; i < len(manuskrips["Manuskrips"]); i++ {
-		// 	fmt.Printf("%d %s\n", i, manuskrips["Manuskrips"][i].LinkOPAC)
-		// }
+
 		pageData["Manuskrips"] = manuskrips
 		pageData["TotalManuskrips"] = manuskripsCount
 		pageData["TotalUnggah"] = unggahCount
 		pageData["TotalPostProcessing"] = postProcessingCount
 		pageData["TotalPemotretan"] = pemotretanCount
 		pageData["TotalPenelusuran"] = penelusuranCount
-		fmt.Println(pageData)
 	}
 	return pageData, nil
 }
 
 func main() {
-	fmt.Println("Started on port 8000")
-
 	homeHandler := func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("index.html"))
-		// manuskrips := map[string][]Manuskrip{}
-		// getSheetsData()
 		pageData, err := getSheetsData()
 		if err != nil {
 			log.Fatalf("Unable to retrieve data from sheet: %v", err)
@@ -210,5 +197,6 @@ func main() {
 	http.HandleFunc("/", homeHandler)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	log.Println("Server started at http://localhost:8080")
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
