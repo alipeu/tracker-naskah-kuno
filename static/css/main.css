@@ -1966,6 +1966,8 @@ section,
 #chartContainer {
   background-color: #9F956C; 
   border-radius: 25px;
+  max-width: 900px;
+  margin: auto;
 }
 
 #progressChart {
