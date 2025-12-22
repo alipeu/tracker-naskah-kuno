@@ -106,7 +106,7 @@ func getSheetsData() (map[string]any, error) {
 	// Prints the names and majors of students in a sample spreadsheet:
 	// https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
 	spreadsheetId := "1EDLv6f8ehprYBno9sRBrXvDXk07N_06KNM2c_VmxoYM"
-	readRange := "test-alif!B2:L"
+	readRange := "rekap!A2:L"
 	resp, err := srv.Spreadsheets.Values.Get(spreadsheetId, readRange).Do()
 	if err != nil {
 		log.Fatalf("Unable to retrieve data from sheet: %v", err)
